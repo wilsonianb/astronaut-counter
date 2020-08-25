@@ -11,6 +11,7 @@ def handle(req):
     start = time.time()
     r = requests.get("http://api.open-notify.org/astros.json")
     logging.debug("Request completed. Total time taken %s", time.time() - start)
+    return r.json()
     result = r.json()
     return result["number"]
 
